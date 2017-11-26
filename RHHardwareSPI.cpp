@@ -124,7 +124,7 @@ void RHHardwareSPI::begin()
     SPI.setDataMode(dataMode);
 #endif
 
-#if (RH_PLATFORM == RH_PLATFORM_ARDUINO) && defined (__arm__) && (defined(ARDUINO_SAM_DUE) || defined(ARDUINO_ARCH_SAMD))
+#if (RH_PLATFORM == RH_PLATFORM_ARDUINO) && defined (__arm__) && (defined(ARDUINO_SAM_DUE) || defined(ARDUINO_ARCH_SAMD) || architectures == stm32)
     // Arduino Due in 1.5.5 has its own BitOrder :-(
     // So too does Arduino Zero
     ::BitOrder bitOrder;

@@ -3,6 +3,8 @@
 // Copyright (C) 2014 Mike McCauley
 // $Id: RH_ASK.cpp,v 1.21 2017/06/25 09:41:17 mikem Exp $
 
+#if (architectures != stm32)
+
 #include <RH_ASK.h>
 #include <RHCRC.h>
 
@@ -845,4 +847,6 @@ void INTERRUPT_ATTR RH_ASK::handleTimerInterrupt()
     else if (_mode == RHModeTx)
         transmitTimer(); // Transmitting
 }
+
+#endif
 
